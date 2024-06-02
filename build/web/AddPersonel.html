@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personel Ekle</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Personel Kayıt Sistemi</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Anasayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="add_personel.html">Personel Ekle</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="personel">Personel Listele</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Personel Ekle</h1>
+        <form action="personel" method="post">
+            <div class="form-group">
+                <label for="name">Ad</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="surname">Soyad</label>
+                <input type="text" class="form-control" id="surname" name="surname" required>
+            </div>
+            <div class="form-group">
+                <label for="registrationNumber">Sicil Numarası</label>
+                <input type="text" class="form-control" id="registrationNumber" name="registrationNumber">
+            </div>
+            <div class="form-group">
+                <label for="department">Departman</label>
+                <select class="form-control" id="department" name="department">
+                    <option>Departman 1</option>
+                    <option>Departman 2</option>
+                    <option>Departman 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="text" class="form-control" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="hireDate">İşe Giriş Tarihi</label>
+                <input type="date" class="form-control" id="hireDate" name="hireDate" required>
+            </div>
+            <div class="form-group">
+                <label for="salary">Maaş Tutarı</label>
+                <input type="number" class="form-control" id="salary" name="salary" required>
+            </div>
+            <div class="form-group">
+                <label for="active">Aktif</label>
+                <input type="checkbox" id="active" name="isActive" value="true">
+            </div>
+            <button type="submit" class="btn btn-primary">Ekle</button>
+        </form>
+    </div>
+</body>
+</html>
