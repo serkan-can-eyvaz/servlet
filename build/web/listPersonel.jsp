@@ -1,9 +1,3 @@
-<%-- 
-    Document   : listPersonel
-    Created on : Jun 2, 2024, 6:15:38 PM
-    Author     : Muhsin21
---%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -12,12 +6,55 @@
     <meta charset="UTF-8">
     <title>Personel Listeleme</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        nav {
+            width: 100%;
+            background-color: #ffffff;
+            border-bottom: 2px solid #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-nav .nav-link {
+            color: orange !important;
+            transition: opacity 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            opacity: 0.7;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px; /* Nav bar altında boşluk bırakmak için */
+        }
+        h1, label {
+            color: orange;
+        }
+        .form-group {
+            text-align: left;
+        }
+        .table th, .table td {
+            color: orange;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Personel Kayıt Sistemi</a>
+        <a class="navbar-brand" href="#" style="color: orange;">Personel Kayıt Sistemi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Anasayfa</a>
                 </li>
@@ -62,7 +99,6 @@
         </table>
         <div class="mt-3">
             <p>Toplam Personel Sayısı: ${personelList.size()}</p>
-            <p>Toplam Maaş: ${totalSalary}</p>
         </div>
     </div>
 </body>

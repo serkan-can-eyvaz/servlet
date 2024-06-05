@@ -1,15 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <title>Personel Ekle</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        nav {
+            width: 100%;
+            background-color: #ffffff;
+            border-bottom: 2px solid #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-nav .nav-link {
+            color: orange !important;
+            transition: opacity 0.3s;
+        }
+        .navbar-nav .nav-link:hover {
+            opacity: 0.7;
+        }
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px; /* Nav bar altında boşluk bırakmak için */
+        }
+        h1, label {
+            color: orange;
+        }
+        .form-group {
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Personel Kayıt Sistemi</a>
+        <a class="navbar-brand" href="#" style="color: orange;">Personel Kayıt Sistemi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Anasayfa</a>
                 </li>
@@ -24,7 +64,7 @@
     </nav>
     <div class="container">
         <h1>Personel Ekle</h1>
-        <form action="personel" method="post">
+        <form id="personelForm" action="personel" method="post">
             <div class="form-group">
                 <label for="name">Ad</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -39,10 +79,12 @@
             </div>
             <div class="form-group">
                 <label for="department">Departman</label>
-                <select class="form-control" id="department" name="department">
-                    <option>Departman 1</option>
-                    <option>Departman 2</option>
-                    <option>Departman 3</option>
+                <select class="form-control" id="department" name="department" multiple>
+                    <option value="Software Development">Yazılım Geliştirme</option>
+                    <option value="IT Support">IT Destek</option>
+                    <option value="Network Administration">Ağ Yönetimi</option>
+                    <option value="Cyber Security">Siber Güvenlik</option>
+                    <option value="Data Science">Veri Bilimi</option>
                 </select>
             </div>
             <div class="form-group">
@@ -64,5 +106,26 @@
             <button type="submit" class="btn btn-primary">Ekle</button>
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        // Formun başarılı bir şekilde gönderilmesi durumunda bildirim gösterme
+        $('#personelForm').submit(function(e) {
+            // Formun gönderilmesini engelleme
+            // e.preventDefault(); // Bu satırı kaldırdık, çünkü form gönderilmesi gerekiyor
+            
+            // Gönderilecek form verilerini al
+            var formData = $(this).serialize();
+            
+            // Bildirim gösterme
+            alert('Personel başarıyla eklendi!');
+            
+            // Form verilerini sunucuya AJAX ile gönderme
+            // $.post('personel', formData, function(response) {
+            //    console.log(response);
+            // });
+        });
+    </script>
 </body>
 </html>

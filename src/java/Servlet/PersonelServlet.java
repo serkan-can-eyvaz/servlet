@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package Servlet;
 
 import Entity.Personel;
@@ -29,7 +25,7 @@ public class PersonelServlet extends HttpServlet {
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
         String registrationNumber = request.getParameter("registrationNumber");
-        String[] department = request.getParameterValues("department");
+        String department = request.getParameter("department");
         String phone = request.getParameter("phone");
         String hireDate = request.getParameter("hireDate");
         double salary = Double.parseDouble(request.getParameter("salary"));

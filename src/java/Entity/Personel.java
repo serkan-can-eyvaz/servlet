@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Entity;
 
-/**
- *
- * @author Muhsin21
- */
 public class Personel {
     private String name;
     private String surname;
     private String registrationNumber;
-    private String[] department;
+    private String department;
     private String phone;
     private String hireDate;
     private double salary;
@@ -21,7 +13,7 @@ public class Personel {
     public Personel() {
     }
 
-    public Personel(String name, String surname, String registrationNumber, String[] department, String phone, String hireDate, double salary, boolean isActive) {
+    public Personel(String name, String surname, String registrationNumber, String department, String phone, String hireDate, double salary, boolean isActive) {
         this.name = name;
         this.surname = surname;
         this.registrationNumber = registrationNumber;
@@ -56,11 +48,11 @@ public class Personel {
         this.registrationNumber = registrationNumber;
     }
 
-    public String[] getDepartment() {
+    public String getDepartment() {
         return department;
     }
 
-    public void setDepartment(String[] department) {
+    public void setDepartment(String department) {
         this.department = department;
     }
 
@@ -95,5 +87,4 @@ public class Personel {
     public void setIsActive(boolean isActive) {
         this.isActive = isActive;
     }
-
 }
