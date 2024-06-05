@@ -99,6 +99,7 @@
         </table>
         <div class="mt-3">
             <p>Toplam Personel Sayısı: ${personelList.size()}</p>
+            <p>Toplam Maaş Tutarı: ${totalSalary}</p>
         </div>
     </div>
 </body>

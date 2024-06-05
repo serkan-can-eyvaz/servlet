@@ -16,7 +16,9 @@ public class PersonelServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        double totalSalary = personelList.stream().mapToDouble(Personel::getSalary).sum();
         request.setAttribute("personelList", personelList);
+        request.setAttribute("totalSalary", totalSalary);
         request.getRequestDispatcher("/listPersonel.jsp").forward(request, response);
     }
 
