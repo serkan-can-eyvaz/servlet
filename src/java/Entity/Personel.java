@@ -9,6 +9,7 @@ public class Personel {
     private String hireDate;
     private double salary;
     private boolean isActive;
+    private boolean active;
 
     public Personel() {
     }
